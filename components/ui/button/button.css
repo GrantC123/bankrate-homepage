@@ -1,0 +1,635 @@
+@layer components {
+    /* ================================================================
+    * Button component styles 
+    *
+    * Blue palette replaced with semantic tokens:
+    *   --color-blue-600       → var(--primary)
+    *   --color-blue-700/800   → color-mix(in oklab, var(--primary), black)
+    *   --color-blue-100/200   → color-mix(in oklab, var(--primary), white)
+    *   --color-gray-200/400   → var(--muted) / var(--muted-foreground)
+    *   bg  --color-white      → var(--background)
+    *   text --color-white     → var(--primary-foreground)
+    *
+    * Semantic color variants (filled, outline, ghost, link):
+    *   data-color='destructive' → var(--destructive) / var(--destructive-foreground)
+    *   data-color='secondary'   → var(--secondary) / var(--secondary-foreground)
+    *   data-color='accent'      → var(--accent) / var(--accent-foreground)
+    * ================================================================ */
+
+    /* default.css */
+    .t-button {
+        padding: 0.875rem 1.5rem;
+        font-size: var(--text-base);
+        line-height: var(--leading-none);
+        letter-spacing: var(--letter-spacing-tighter);
+        font-weight: var(--font-weight-bold);
+        border-radius: 0.625rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        text-align: center;
+        outline: 0.125rem solid transparent;
+        outline-offset: 0.125rem;
+        border: 0.125rem solid transparent;
+        cursor: pointer;
+        background-color: var(--primary);
+        color: var(--primary-foreground);
+        transition: all var(--tw-duration) var(--tw-ease);
+
+        &:hover {
+            background-color: color-mix(in oklab, var(--primary) 85%, black);
+        }
+
+        &:active {
+            background-color: color-mix(in oklab, var(--primary) 70%, black);
+        }
+
+        &:focus-visible {
+            background-color: color-mix(in oklab, var(--primary) 85%, black);
+            outline-color: color-mix(in oklab, var(--primary) 85%, black);
+        }
+
+        &:disabled {
+            background-color: var(--muted);
+            color: var(--muted-foreground);
+            cursor: not-allowed;
+        }
+
+        & :where(svg) {
+            width: auto;
+            height: 1em;
+        }
+    }
+
+    .t-button:where([data-color='white']) {
+        background-color: var(--primary-foreground);
+        color: var(--primary);
+
+        &:hover {
+            background-color: color-mix(in oklab, var(--primary) 15%, white);
+        }
+        &:active {
+            background-color: color-mix(in oklab, var(--primary) 25%, white);
+        }
+        &:focus-visible {
+            background-color: color-mix(in oklab, var(--primary) 15%, white);
+            outline-color: color-mix(in oklab, var(--primary) 15%, white);
+        }
+    }
+
+    .t-button:where([data-color='destructive']) {
+        background-color: var(--destructive);
+        color: var(--destructive-foreground);
+
+        &:hover {
+            background-color: color-mix(in oklab, var(--destructive) 85%, black);
+        }
+        &:active {
+            background-color: color-mix(in oklab, var(--destructive) 70%, black);
+        }
+        &:focus-visible {
+            background-color: color-mix(in oklab, var(--destructive) 85%, black);
+            outline-color: color-mix(in oklab, var(--destructive) 85%, black);
+        }
+        &:disabled {
+            background-color: var(--muted);
+            color: var(--muted-foreground);
+        }
+    }
+
+    .t-button:where([data-color='secondary']) {
+        background-color: var(--secondary);
+        color: var(--secondary-foreground);
+
+        &:hover {
+            background-color: color-mix(in oklab, var(--secondary) 85%, black);
+        }
+        &:active {
+            background-color: color-mix(in oklab, var(--secondary) 70%, black);
+        }
+        &:focus-visible {
+            background-color: color-mix(in oklab, var(--secondary) 85%, black);
+            outline-color: color-mix(in oklab, var(--secondary) 85%, black);
+        }
+        &:disabled {
+            background-color: var(--muted);
+            color: var(--muted-foreground);
+        }
+    }
+
+    .t-button:where([data-color='accent']) {
+        background-color: var(--accent);
+        color: var(--accent-foreground);
+
+        &:hover {
+            background-color: var(--color-blue-200);
+        }
+        &:active {
+            background-color: var(--color-blue-300);
+        }
+        &:focus-visible {
+            background-color: var(--color-blue-200);
+            outline-color: var(--color-blue-200);
+        }
+        &:disabled {
+            background-color: var(--muted);
+            color: var(--muted-foreground);
+        }
+    }
+
+    .t-button:where([data-color='muted']) {
+        background-color: var(--muted);
+        color: var(--muted-foreground);
+
+        &:hover {
+            background-color: color-mix(in oklab, var(--muted) 95%, black);
+        }
+        &:active {
+            background-color: color-mix(in oklab, var(--muted) 90%, black);
+        }
+        &:focus-visible {
+            background-color: color-mix(in oklab, var(--muted) 95%, black);
+            outline-color: var(--muted-foreground);
+        }
+        &:disabled {
+            background-color: var(--muted);
+            color: var(--muted-foreground);
+            opacity: 0.5;
+        }
+    }
+
+    .t-button:has(.t-button__arrow) {
+        text-decoration: none !important;
+        gap: 0.25rem;
+
+        :where(.t-button__arrow) {
+            transform: translate(0);
+            transition: transform 300ms ease;
+            height: 1em;
+        }
+
+        :where(.t-button__arrow-line) {
+            opacity: 0;
+            transition: opacity 300ms ease;
+        }
+
+        &:not(:disabled) {
+            &:hover,
+            &:focus-visible {
+                :where(.t-button__arrow) {
+                    transform: translateX(0.25rem);
+                }
+                :where(.t-button__arrow-line) {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    /* outline.css */
+    .t-button:where([data-variant='outline']):disabled {
+        background-color: var(--background) !important;
+        border-color: var(--muted-foreground) !important;
+    }
+
+    .t-button:where([data-variant='outline']) {
+        background-color: var(--background);
+        color: var(--primary);
+        border-color: var(--primary);
+
+        &:hover {
+            background-color: color-mix(in oklab, var(--primary) 15%, white);
+        }
+        &:active {
+            background-color: color-mix(in oklab, var(--primary) 25%, white);
+        }
+        &:focus-visible {
+            background-color: color-mix(in oklab, var(--primary) 15%, white);
+            outline-color: var(--primary);
+        }
+    }
+
+    .t-button:where([data-variant='outline'][data-color='white']) {
+        background-color: transparent;
+        color: white;
+        border-color: white;
+
+        &:hover {
+            background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+        }
+        &:active {
+            background-color: color-mix(in oklab, var(--color-white) 20%, transparent);
+        }
+        &:focus-visible {
+            background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+            outline-color: white;
+        }
+    }
+
+    .t-button:where([data-variant='outline'][data-color='destructive']) {
+        background-color: var(--background);
+        color: var(--destructive);
+        border-color: var(--destructive);
+
+        &:hover {
+            background-color: color-mix(in oklab, var(--destructive) 15%, white);
+        }
+        &:active {
+            background-color: color-mix(in oklab, var(--destructive) 25%, white);
+        }
+        &:focus-visible {
+            background-color: color-mix(in oklab, var(--destructive) 15%, white);
+            outline-color: var(--destructive);
+        }
+    }
+
+    /* data-color='accent' — outline */
+    .t-button:where([data-variant='outline'][data-color='accent']) {
+        background-color: var(--background);
+        color: var(--accent-foreground);
+        border-color: var(--accent-foreground);
+
+        &:hover {
+            background-color: var(--color-blue-200);
+        }
+        &:active {
+            background-color: var(--color-blue-300);
+        }
+        &:focus-visible {
+            background-color: var(--color-blue-200);
+            outline-color: var(--accent-foreground);
+        }
+    }
+
+    .t-button:where([data-variant='outline'][data-color='secondary']) {
+        background-color: var(--background);
+        color: var(--secondary);
+        border-color: var(--secondary);
+
+        &:hover {
+            background-color: color-mix(in oklab, var(--secondary) 15%, white);
+        }
+        &:active {
+            background-color: color-mix(in oklab, var(--secondary) 25%, white);
+        }
+        &:focus-visible {
+            background-color: color-mix(in oklab, var(--secondary) 15%, white);
+            outline-color: var(--secondary);
+        }
+    }
+
+    .t-button:where([data-variant='outline'][data-color='muted']) {
+        background-color: var(--background);
+        color: var(--muted-foreground);
+        border-color: var(--muted-foreground);
+
+        &:hover {
+            background-color: color-mix(in oklab, var(--muted) 95%, black);
+        }
+        &:active {
+            background-color: color-mix(in oklab, var(--muted) 90%, black);
+        }
+        &:focus-visible {
+            background-color: color-mix(in oklab, var(--muted) 95%, black);
+            outline-color: var(--muted-foreground);
+        }
+    }
+
+    /* ghost.css */
+    .t-button:where([data-variant='ghost']):disabled {
+        background-color: transparent !important;
+    }
+
+    .t-button:where([data-variant='ghost']) {
+        background-color: transparent;
+        color: var(--primary);
+
+        &:hover {
+            background-color: color-mix(in oklab, var(--primary) 15%, white);
+        }
+        &:active {
+            background-color: color-mix(in oklab, var(--primary) 25%, white);
+        }
+        &:focus-visible {
+            background-color: color-mix(in oklab, var(--primary) 15%, white);
+            outline-color: var(--primary);
+        }
+    }
+
+    .t-button:where([data-variant='ghost'][data-color='white']) {
+        background-color: transparent;
+        color: white;
+
+        &:hover {
+            background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+        }
+        &:active {
+            background-color: color-mix(in oklab, var(--color-white) 20%, transparent);
+        }
+        &:focus-visible {
+            background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+            outline-color: color-mix(in oklab, var(--color-white) 80%, transparent);
+        }
+    }
+
+    .t-button:where([data-variant='ghost'][data-color='destructive']) {
+        background-color: transparent;
+        color: var(--destructive);
+
+        &:hover {
+            background-color: color-mix(in oklab, var(--destructive) 15%, white);
+        }
+        &:active {
+            background-color: color-mix(in oklab, var(--destructive) 25%, white);
+        }
+        &:focus-visible {
+            background-color: color-mix(in oklab, var(--destructive) 15%, white);
+            outline-color: var(--destructive);
+        }
+    }
+
+    .t-button:where([data-variant='ghost'][data-color='secondary']) {
+        background-color: transparent;
+        color: var(--secondary);
+
+        &:hover {
+            background-color: color-mix(in oklab, var(--secondary) 15%, white);
+        }
+        &:active {
+            background-color: color-mix(in oklab, var(--secondary) 25%, white);
+        }
+        &:focus-visible {
+            background-color: color-mix(in oklab, var(--secondary) 15%, white);
+            outline-color: var(--secondary);
+        }
+    }
+
+    .t-button:where([data-variant='ghost'][data-color='accent']) {
+        background-color: transparent;
+        color: var(--accent-foreground);
+
+        &:hover {
+            background-color: var(--color-blue-200);
+        }
+        &:active {
+            background-color: var(--color-blue-300);
+        }
+        &:focus-visible {
+            background-color: var(--color-blue-200);
+            outline-color: var(--accent-foreground);
+        }
+    }
+
+    .t-button:where([data-variant='ghost'][data-color='muted']) {
+        background-color: transparent;
+        color: var(--muted-foreground);
+
+        &:hover {
+            background-color: color-mix(in oklab, var(--muted) 95%, black);
+        }
+        &:active {
+            background-color: color-mix(in oklab, var(--muted) 90%, black);
+        }
+        &:focus-visible {
+            background-color: color-mix(in oklab, var(--muted) 95%, black);
+            outline-color: var(--muted-foreground);
+        }
+    }
+
+    /* link.css */
+    .t-button:where([data-variant^='link']) {
+        color: var(--primary);
+        background-color: unset;
+        padding: 0;
+        font-weight: theme(fontWeight.bold);
+        text-underline-offset: 0.125rem;
+        min-height: 3em;
+
+        &:hover {
+            color: color-mix(in oklab, var(--primary) 85%, black);
+            background-color: unset;
+        }
+
+        &:active {
+            color: color-mix(in oklab, var(--primary) 70%, black);
+            background-color: unset;
+        }
+
+        &:focus-visible {
+            background-color: transparent;
+            outline: 0.125rem solid color-mix(in oklab, var(--primary) 70%, black);
+            text-decoration: underline;
+            color: color-mix(in oklab, var(--primary) 70%, black);
+        }
+
+        &:disabled {
+            color: var(--muted-foreground) !important;
+            cursor: not-allowed;
+            background-color: unset;
+        }
+
+        &:where([data-color='white']) {
+            color: var(--color-white);
+
+            &:hover,
+            &:focus-visible,
+            &:active {
+                color: color-mix(in oklab, var(--primary) 50%, white);
+                outline-offset: 0.25rem;
+                border-radius: 0.125rem;
+            }
+
+            &:focus-visible {
+                outline-color: color-mix(in oklab, var(--primary) 50%, white);
+            }
+        }
+
+        /* &:where([data-color='light-blue']) {
+            color: color-mix(in oklab, var(--primary) 50%, white);
+
+            &:hover,
+            &:focus-visible,
+            &:active {
+                color: color-mix(in oklab, var(--primary) 50%, white);
+                outline-offset: 0.25rem;
+                border-radius: 0.125rem;
+            }
+
+            &:focus-visible {
+                outline-color: color-mix(in oklab, var(--primary) 50%, white);
+            }
+        } */
+
+        &:where([data-color='destructive']) {
+            background-color: transparent;
+            color: var(--destructive);
+
+            &:hover {
+                color: color-mix(in oklab, var(--destructive) 85%, black);
+                background-color: unset;
+            }
+
+            &:active {
+                color: color-mix(in oklab, var(--destructive) 70%, black);
+                background-color: unset;
+            }
+
+            &:focus-visible {
+                background-color: transparent;
+                outline: 0.125rem solid color-mix(in oklab, var(--destructive) 70%, black);
+                text-decoration: underline;
+                color: color-mix(in oklab, var(--destructive) 70%, black);
+            }
+        }
+
+        &:where([data-color='secondary']) {
+            background-color: transparent;
+            color: var(--secondary);
+        
+            &:hover {
+                color: color-mix(in oklab, var(--secondary) 85%, black);
+                background-color: unset;
+            }
+        
+            &:active {
+                color: color-mix(in oklab, var(--secondary) 70%, black);
+                background-color: unset;
+            }
+        
+            &:focus-visible {
+                background-color: transparent;
+                outline: 0.125rem solid color-mix(in oklab, var(--secondary) 70%, black);
+                text-decoration: underline;
+                color: color-mix(in oklab, var(--secondary) 70%, black);
+            }
+        }
+
+        &:where([data-color='accent']) {
+            background-color: transparent;
+            color: var(--accent-foreground);
+
+            &:hover {
+                color: var(--color-blue-800);
+                background-color: unset;
+            }
+
+            &:active {
+                color: var(--color-blue-900);
+                background-color: unset;
+            }
+
+            &:focus-visible {
+                background-color: transparent;
+                outline: 0.125rem solid var(--color-blue-800);
+                text-decoration: underline;
+                color: var(--color-blue-800);
+            }
+        }
+
+        &:where([data-color='muted']) {
+            background-color: transparent;
+            color: var(--muted-foreground);
+
+            &:hover {
+                color: color-mix(in oklab, var(--muted-foreground) 85%, black);
+                background-color: unset;
+            }
+
+            &:active {
+                color: color-mix(in oklab, var(--muted-foreground) 70%, black);
+                background-color: unset;
+            }
+
+            &:focus-visible {
+                background-color: transparent;
+                outline: 0.125rem solid var(--muted-foreground);
+                text-decoration: underline;
+                color: color-mix(in oklab, var(--muted-foreground) 85%, black);
+            }
+        }
+
+        &:where([data-size='xs']) {
+            font-size: var(--text-xs);
+        }
+
+        &:where([data-size='sm']) {
+            font-size: var(--text-sm);
+        }
+
+        &:where([data-size='lg']) {
+            font-size: var(--text-lg);
+        }
+    }
+
+    .t-button:where([data-variant='link']) {
+        text-decoration: underline;
+    }
+
+    .t-button:where([data-variant='link-hover']) {
+        text-decoration: none;
+
+        &:not(:disabled) {
+            &:hover,
+            &:focus-visible {
+                text-decoration: underline;
+            }
+        }
+    }
+
+
+    /* size.css */
+    .t-button:where([data-size='xs']) {
+        padding: 0.5rem 0.75rem;
+        font-size: var(--text-xs);
+        gap: 0.25rem;
+    }
+
+    .t-button:where([data-size='sm']) {
+        padding: 0.75rem 1rem;
+        font-size: var(--text-sm);
+        gap: 0.375rem;
+    }
+
+    .t-button:where([data-size='lg']) {
+        padding: 1rem 1.75rem;
+        font-size: var(--text-lg);
+        gap: 0.625rem;
+    }
+
+    /* shape.css */
+    .t-button:where([data-shape='pill']) {
+        border-radius: 3rem;
+    }
+
+    .t-button:where([data-shape='square']) {
+        border-radius: 0;
+    }
+
+    .t-button:where([data-shape='circle']) {
+        border-radius: 100%;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0;
+        min-height: 0;
+        font-size: var(--text-xl);
+
+        &:where([data-size='xs']) {
+            width: 1.5rem;
+            height: 1.5rem;
+            font-size: var(--text-xs);
+        }
+
+        &:where([data-size='sm']) {
+            width: 2rem;
+            height: 2rem;
+            font-size: var(--text-base);
+        }
+
+        &:where([data-size='lg']) {
+            font-size: var(--text-2xl);
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+}
