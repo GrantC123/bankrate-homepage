@@ -13,8 +13,8 @@ export function HeroV2() {
       <div className="grid items-center gap-16 lg:grid-cols-[1fr_1.05fr]">
         <div className="text-white">
           <h1 className="font-serif text-[length:var(--text-display)] font-semibold leading-[1.05] tracking-[-2px]">
-            9 out of 10 homebuyers overpay for their mortgage.{" "}
-            <span className="text-blue-300">Are you one of them?</span>
+            Stop overpaying for your mortgage.{" "}
+            <span className="text-blue-300">Start comparing today.</span>
           </h1>
           <p className="mt-8 max-w-[540px] text-[18px] leading-[1.55] text-white/80">
             Every year, American homeowners pay an average of{" "}
