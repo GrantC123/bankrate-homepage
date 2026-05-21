@@ -3,8 +3,8 @@ import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 const SUFFIX_ASSETS = {
-  plus: "/figma/stat-suffix-plus.svg",
-  percent: "/figma/stat-suffix-percent.svg",
+  plus: "/images/stat-suffix-plus.svg",
+  percent: "/images/stat-suffix-percent.svg",
 } as const
 
 export type StatSuffix = keyof typeof SUFFIX_ASSETS

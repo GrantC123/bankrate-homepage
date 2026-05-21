@@ -69,7 +69,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1280px] px-5 py-12 md:px-16 md:py-16">
         <a href="/" className="mb-10 inline-block shrink-0" aria-label="Bankrate home">
           <Image
-            src="/figma/logo.svg"
+            src="/images/logo.svg"
             alt="Bankrate"
             width={176}
             height={28}

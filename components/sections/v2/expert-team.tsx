@@ -7,19 +7,19 @@ const EXPERTS = [
     name: "Sarah Foster",
     title: "Principal Analyst",
     specialty: "Mortgage markets, Fed policy, and what rate moves actually mean for buyers",
-    avatar: "/figma/expert-3.png",
+    avatar: "/images/expert-3.png",
   },
   {
     name: "Alex Gailey",
     title: "Senior Editor",
     specialty: "Consumer banking, high-yield savings, and how to make deposits work harder",
-    avatar: "/figma/expert-1.png",
+    avatar: "/images/expert-1.png",
   },
   {
     name: "Greg McBride",
     title: "Chief Financial Analyst",
     specialty: "Macro trends, household balance sheets, and decades of independent rate research",
-    avatar: "/figma/expert-4.png",
+    avatar: "/images/expert-4.png",
   },
 ]
 

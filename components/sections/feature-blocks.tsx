@@ -92,7 +92,7 @@ function FeatureVisual({ type }: { type: string }) {
     return (
       <div className="relative min-h-[363px] overflow-hidden rounded-[32px]">
         <Image
-          src="/figma/feature-market.png"
+          src="/images/feature-market.png"
           alt="Family reviewing mortgage rates with a rate card overlay"
           fill
           className="object-cover"

@@ -2,10 +2,10 @@ import Image from "next/image"
 import { PrimaryCta, SectionShell } from "@/components/home/shared"
 
 const PARTNERS = [
-  { src: "/figma/partner-veterans.png", alt: "Veterans United Home Loans" },
-  { src: "/figma/partner-morty.png", alt: "Morty" },
-  { src: "/figma/partner-tomo.png", alt: "Tomo Mortgage" },
-  { src: "/figma/partner-mrcooper.png", alt: "Mr. Cooper" },
+  { src: "/images/partner-veterans.png", alt: "Veterans United Home Loans" },
+  { src: "/images/partner-morty.png", alt: "Morty" },
+  { src: "/images/partner-tomo.png", alt: "Tomo Mortgage" },
+  { src: "/images/partner-mrcooper.png", alt: "Mr. Cooper" },
 ]
 
 const BULLETS = [
@@ -32,7 +32,7 @@ export function B2BSection() {
             Partner with the marketplace that powers homeownership.
           </h2>
           <Image
-            src="/figma/b2b-underline.svg"
+            src="/images/b2b-underline.svg"
             alt=""
             width={168}
             height={6}
@@ -44,7 +44,7 @@ export function B2BSection() {
         <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-2">
           <div className="relative mx-auto h-[535px] w-full max-w-[588px] overflow-hidden rounded-[32px]">
             <Image
-              src="/figma/b2b-bg.svg"
+              src="/images/b2b-bg.svg"
               alt=""
               fill
               className="object-contain object-center"

@@ -50,7 +50,7 @@ export function ReadMoreLink({
       )}
     >
       {children}
-      <Image src="/figma/arrow.svg" alt="" width={12} height={12} className="rotate-180" aria-hidden />
+      <Image src="/images/arrow.svg" alt="" width={12} height={12} className="rotate-180" aria-hidden />
     </a>
   )
 }

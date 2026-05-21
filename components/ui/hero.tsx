@@ -29,7 +29,7 @@ const DEFAULTS = {
   primaryCtaLabel: "Unlock my personal dashboard",
   secondaryCtaLabel: "Just show me today's rates",
   estimatedPayment: "$358",
-  imageSrc: "/figma/hero-photo.png",
+  imageSrc: "/images/hero-photo.png",
   imageAlt: "Couple reviewing mortgage rates on a laptop",
 } as const
 
@@ -67,7 +67,7 @@ export function Hero({
               <span className="relative inline-block">
                 {headlineHighlight}
                 <Image
-                  src="/figma/hero-underline.svg"
+                  src="/images/hero-underline.svg"
                   alt=""
                   width={179}
                   height={4}

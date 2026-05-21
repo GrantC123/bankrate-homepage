@@ -37,7 +37,7 @@ export function Nav() {
       <div className="mx-auto hidden h-[82px] max-w-[1312px] items-center justify-between px-16 lg:flex">
         <a href="/" className="block shrink-0" aria-label="Bankrate home">
           <Image
-            src="/figma/logo.svg"
+            src="/images/logo.svg"
             alt="Bankrate"
             width={176}
             height={28}
@@ -69,7 +69,7 @@ export function Nav() {
             className="flex h-12 w-12 items-center justify-center rounded-[10px] border border-primary transition-colors hover:bg-primary/10"
             aria-label="Search"
           >
-            <Image src="/figma/search.svg" alt="" width={24} height={24} aria-hidden />
+            <Image src="/images/search.svg" alt="" width={24} height={24} aria-hidden />
           </button>
         </div>
       </div>
@@ -78,7 +78,7 @@ export function Nav() {
       <div className="flex h-[72px] items-center justify-between px-5 lg:hidden">
         <a href="/" className="block shrink-0" aria-label="Bankrate home">
           <Image
-            src="/figma/logo.svg"
+            src="/images/logo.svg"
             alt="Bankrate"
             width={176}
             height={28}
@@ -93,7 +93,7 @@ export function Nav() {
             className="flex size-10 items-center justify-center"
             aria-label="Search"
           >
-            <Image src="/figma/search.svg" alt="" width={20} height={20} aria-hidden />
+            <Image src="/images/search.svg" alt="" width={20} height={20} aria-hidden />
           </button>
           <MobileMenuButton open={menuOpen} onClick={() => setMenuOpen((open) => !open)} />
         </div>

@@ -12,16 +12,16 @@ type ExpertCardSpec = {
 }
 
 const LEFT_COLUMN: ExpertCardSpec[] = [
-  { photo: "/figma/expert-1.png", bg: PURPLE, alt: "" },
-  { photo: "/figma/expert-3.png", bg: GREEN, alt: "" },
-  { photo: "/figma/expert-2.png", bg: YELLOW, alt: "" },
+  { photo: "/images/expert-1.png", bg: PURPLE, alt: "" },
+  { photo: "/images/expert-3.png", bg: GREEN, alt: "" },
+  { photo: "/images/expert-2.png", bg: YELLOW, alt: "" },
 ]
 
 const RIGHT_COLUMN: ExpertCardSpec[] = [
-  { photo: "/figma/expert-3.png", bg: GREEN, alt: "" },
-  { photo: "/figma/expert-1.png", bg: YELLOW, alt: "" },
-  { photo: "/figma/expert-4.png", bg: PURPLE, alt: "" },
-  { photo: "/figma/expert-2.png", bg: GREEN, alt: "" },
+  { photo: "/images/expert-3.png", bg: GREEN, alt: "" },
+  { photo: "/images/expert-1.png", bg: YELLOW, alt: "" },
+  { photo: "/images/expert-4.png", bg: PURPLE, alt: "" },
+  { photo: "/images/expert-2.png", bg: GREEN, alt: "" },
 ]
 
 export function ExpertTeamSection() {
@@ -42,7 +42,7 @@ export function ExpertTeamSection() {
             <PrimaryCta>Meet our editorial team</PrimaryCta>
 
             <Image
-              src="/figma/expert-arrow.svg"
+              src="/images/expert-arrow.svg"
               alt=""
               width={179}
               height={63}
@@ -63,7 +63,7 @@ export function ExpertTeamSection() {
         </div>
 
         <Image
-          src="/figma/expert-sparkle.svg"
+          src="/images/expert-sparkle.svg"
           alt=""
           width={69}
           height={82}

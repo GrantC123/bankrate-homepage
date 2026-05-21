@@ -11,7 +11,7 @@ export function MissionSection() {
             We connect people to trusted ways to save, borrow and thrive.
           </h2>
           <Image
-            src="/figma/mission-decoration.svg"
+            src="/images/mission-decoration.svg"
             alt=""
             width={583}
             height={48}

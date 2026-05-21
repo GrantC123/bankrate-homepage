@@ -7,7 +7,7 @@ export function MemberAppSection() {
       <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-2">
         <div className="relative h-[616px] overflow-hidden rounded-[32px] bg-[var(--brand-blue)]">
           <Image
-            src="/figma/member-phone.png"
+            src="/images/member-phone.png"
             alt="Bankrate member app showing today's top mortgage rates"
             fill
             className="object-cover object-center"

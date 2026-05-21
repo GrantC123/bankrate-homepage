@@ -21,7 +21,7 @@ export function EditorialSection() {
             </div>
             <div className="relative mx-4 aspect-[491/294] overflow-hidden rounded-3xl">
               <Image
-                src="/figma/editorial-news.png"
+                src="/images/editorial-news.png"
                 alt="Woman working on a laptop"
                 fill
                 className="object-cover"
@@ -35,7 +35,7 @@ export function EditorialSection() {
           <Card className="flex-row gap-0 overflow-hidden rounded-[34px] border-0 p-0 shadow-none">
             <div className="relative h-[259px] w-[239px] shrink-0 overflow-hidden rounded-3xl m-4">
               <Image
-                src="/figma/editorial-expert.png"
+                src="/images/editorial-expert.png"
                 alt="Sarah Foster, Principal Analyst"
                 fill
                 className="object-cover"

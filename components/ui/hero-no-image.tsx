@@ -55,7 +55,7 @@ export function HeroNoImage({
                 <span className="relative inline-block">
                   {underlinePhrase}
                   <Image
-                    src="/figma/hero-no-image-underline.svg"
+                    src="/images/hero-no-image-underline.svg"
                     alt=""
                     width={179}
                     height={4}

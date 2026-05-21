@@ -18,7 +18,7 @@ const SECONDARIES = [
     body:
       "Upper-income households carry the highest mortgage overpayment rate of any income group — 93%. Better credit makes it worse, not better.",
     author: "Sarah Foster",
-    avatar: "/figma/expert-1.png",
+    avatar: "/images/expert-1.png",
     href: "#data-drop",
   },
   {
@@ -26,7 +26,7 @@ const SECONDARIES = [
     title: "600+ banks, surveyed this week. Here's where mortgage rates actually moved.",
     body: "",
     author: "Alex Gailey",
-    avatar: "/figma/expert-3.png",
+    avatar: "/images/expert-3.png",
     href: "#weekly-rate-survey",
   },
   {
@@ -34,7 +34,7 @@ const SECONDARIES = [
     title: "Your savings account is probably paying you less than 1%.",
     body: "Here's what the market is actually offering right now.",
     author: "Greg McBride",
-    avatar: "/figma/expert-4.png",
+    avatar: "/images/expert-4.png",
     href: "#best-savings-rates",
   },
 ]
@@ -56,14 +56,21 @@ export function EditorialResearch() {
           </h3>
           <p className="text-[18px] leading-[1.5] text-white/80">{LEAD.body}</p>
           <p className="text-[14px] text-white/60">{LEAD.author}</p>
-          <div className="mt-auto">
-            <a
-              href={LEAD.href}
-              className="inline-flex items-center gap-2 text-[15px] font-semibold text-blue-300 hover:text-white"
-            >
-              {LEAD.cta} →
-            </a>
+          <div className="relative mt-auto overflow-hidden rounded-2xl">
+            <Image
+              src="/images/Homes-Hidden-Costs-of-Homeownership-Data-Study.webp"
+              alt="Key with house-shaped keychain made from a dollar bill"
+              width={800}
+              height={450}
+              className="w-full object-cover"
+            />
           </div>
+          <a
+            href={LEAD.href}
+            className="inline-flex items-center gap-2 text-[15px] font-semibold text-blue-300 hover:text-white"
+          >
+            {LEAD.cta} →
+          </a>
         </article>
 
         <div className="flex flex-col gap-5">
