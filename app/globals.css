@@ -657,6 +657,14 @@
   body {
     min-width: 320px;
     overflow-x: hidden;
+    text-wrap: pretty;
+  }
+
+  p,
+  li,
+  blockquote,
+  figcaption {
+    text-wrap: pretty;
   }
 
   :root {
@@ -681,6 +689,7 @@
   h6 {
     font-family: var(--font-serif), ui-serif, Georgia, serif;
     font-weight: 600;
+    text-wrap: pretty;
   }
 }
 
