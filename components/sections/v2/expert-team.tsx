@@ -40,7 +40,7 @@ function ExpertCard({
   fg: string
 }) {
   return (
-    <article className="flex flex-col gap-6 rounded-[18px] border border-[#e5e2db] bg-white p-[33px]">
+    <article className="flex flex-col gap-6 rounded-[18px] bg-white p-[33px]">
       <div className="@container relative h-[280px] w-full overflow-hidden rounded-[14px]">
         {/* Colored SVG background */}
         <Image

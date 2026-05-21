@@ -10,7 +10,7 @@ const PROOF = [
 export function B2BEndcap() {
   return (
     <SectionShell className="py-20">
-      <div className="overflow-hidden rounded-5xl border border-gray-200 bg-white px-6 py-12 md:px-12 md:py-20">
+      <div className="overflow-hidden rounded-5xl bg-white px-6 py-12 md:px-12 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div>
             <h2 className="font-serif text-[length:var(--text-heading-lg)] font-semibold leading-[1.15] tracking-[-2px] text-gray-900">

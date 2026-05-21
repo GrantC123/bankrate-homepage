@@ -43,7 +43,7 @@ export function AudiencePathing() {
         {PATHS.map((path) => (
           <article
             key={path.id}
-            className="flex flex-col gap-6 rounded-3xl border border-gray-200 bg-white p-6 md:p-10"
+            className="flex flex-col gap-6 rounded-3xl bg-white p-6 md:p-10"
           >
             <div className="flex items-baseline gap-4">
               <h3 className="font-serif text-[28px] font-semibold leading-[1.2] tracking-[-1px] text-gray-900">

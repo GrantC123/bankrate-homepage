@@ -41,7 +41,7 @@ export function ProductsV2() {
         {TILES.map((tile) => (
           <article
             key={tile.title}
-            className="flex h-full flex-col gap-6 rounded-3xl border border-gray-200 bg-white p-8"
+            className="flex h-full flex-col gap-6 rounded-3xl bg-white p-8"
           >
             <div className={`h-32 w-full rounded-2xl ${tile.accent}`} aria-hidden />
             <h3 className="font-serif text-[24px] font-semibold leading-[1.2] tracking-[-0.5px] text-gray-900">

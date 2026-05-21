@@ -1,35 +1,35 @@
 import { Nav } from "@/components/sections/nav"
-import { Hero } from "@/components/ui/hero"
-import { ProofBanner } from "@/components/sections/proof-banner"
-import { InteractiveJourney } from "@/components/sections/interactive-journey"
-import { EditorialSection } from "@/components/sections/editorial-section"
-import { ExpertTeamSection } from "@/components/sections/expert-team-section"
-import { MemberAppSection } from "@/components/sections/member-app-section"
-import { MissionSection } from "@/components/sections/mission-section"
-import { FeatureBlocks } from "@/components/sections/feature-blocks"
-import { B2BSection } from "@/components/sections/b2b-section"
+import { HeroV2 } from "@/components/sections/v2/hero"
+import { ProofBannerV2 } from "@/components/sections/v2/proof-banner"
+import { IdentityStatement } from "@/components/sections/v2/identity-statement"
+import { AudiencePathing } from "@/components/sections/v2/audience-pathing"
+import { MemberExperienceV2 } from "@/components/sections/v2/member-experience"
+import { RatesAndCalculator } from "@/components/sections/v2/rates-calculator"
+import { EditorialResearch } from "@/components/sections/v2/editorial-research"
+import { ExpertTeamV2 } from "@/components/sections/v2/expert-team"
+import { ProductsV2 } from "@/components/sections/v2/products"
+import { B2BEndcap } from "@/components/sections/v2/b2b-endcap"
 import { Footer } from "@/components/sections/footer"
 
 export default function HomePage() {
   return (
     <>
-      <Nav />
-      <div className="bg-blue-900">
-        <Hero />
+      <div className="bg-[#f5f2eb]">
+        <Nav variant="cream" />
+        <HeroV2 />
       </div>
 
-      <div className="bg-[#F5F2EB]">
-        <ProofBanner />
-        <main>
-          <InteractiveJourney />
-          <EditorialSection />
-          <ExpertTeamSection />
-          <MemberAppSection />
-          <MissionSection />
-          <FeatureBlocks />
-          <B2BSection />
-        </main>
-      </div>
+      <main className="bg-[var(--surface-cream)]">
+        <ProofBannerV2 />
+        <IdentityStatement />
+        <AudiencePathing />
+        <MemberExperienceV2 />
+        <RatesAndCalculator />
+        <EditorialResearch />
+        <ExpertTeamV2 />
+        <ProductsV2 />
+        <B2BEndcap />
+      </main>
 
       <Footer />
     </>
