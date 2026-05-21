@@ -13,7 +13,7 @@ export function SectionShell({
   id?: string
 }) {
   return (
-    <section id={id} className={cn("px-16", className)}>
+    <section id={id} className={cn("px-6 md:px-16", className)}>
       <div className="mx-auto max-w-[1312px]">{children}</div>
     </section>
   )

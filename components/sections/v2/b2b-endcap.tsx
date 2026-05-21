@@ -10,10 +10,10 @@ const PROOF = [
 export function B2BEndcap() {
   return (
     <SectionShell className="py-20">
-      <div className="overflow-hidden rounded-5xl border border-gray-200 bg-white px-12 py-20">
+      <div className="overflow-hidden rounded-5xl border border-gray-200 bg-white px-6 py-12 md:px-12 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div>
-            <h2 className="font-serif text-[44px] font-semibold leading-[1.15] tracking-[-2px] text-gray-900">
+            <h2 className="font-serif text-[length:var(--text-heading-lg)] font-semibold leading-[1.15] tracking-[-2px] text-gray-900">
               Partner with the platform that powers homeownership
             </h2>
             <p className="mt-6 text-[17px] leading-[1.55] text-gray-900/80">
@@ -35,7 +35,7 @@ export function B2BEndcap() {
                 key={point.value}
                 className="flex items-baseline gap-6 rounded-2xl bg-blue-50 p-7"
               >
-                <p className="font-serif text-[40px] font-semibold leading-none tracking-[-1.5px] text-primary">
+                <p className="font-serif text-[length:var(--text-heading-md)] font-semibold leading-none tracking-[-1.5px] text-primary">
                   {point.value}
                 </p>
                 <p className="text-[15px] leading-[1.4] text-gray-900/80">{point.label}</p>

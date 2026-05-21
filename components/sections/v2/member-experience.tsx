@@ -19,9 +19,9 @@ const FEATURES = [
 export function MemberExperienceV2() {
   return (
     <SectionShell className="py-20">
-      <div className="overflow-hidden rounded-5xl bg-blue-900 px-12 py-20 text-white">
+      <div className="overflow-hidden rounded-5xl bg-blue-900 px-6 py-12 md:px-12 md:py-20 text-white">
         <div className="mx-auto max-w-[760px] text-center">
-          <h2 className="font-serif text-[48px] font-semibold leading-[1.15] tracking-[-2px]">
+          <h2 className="font-serif text-[length:var(--text-heading-lg)] font-semibold leading-[1.15] tracking-[-2px]">
             Your rate doesn&apos;t have to be a one-time guess
           </h2>
           <p className="mt-6 text-[18px] leading-[1.55] text-white/80">

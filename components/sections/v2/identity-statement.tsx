@@ -4,7 +4,7 @@ export function IdentityStatement() {
   return (
     <SectionShell className="py-20">
       <div className="mx-auto max-w-[860px] text-center">
-        <h2 className="font-serif text-[48px] font-semibold leading-[1.15] tracking-[-2px] text-gray-900">
+        <h2 className="font-serif text-[length:var(--text-heading-lg)] font-semibold leading-[1.15] tracking-[-2px] text-gray-900">
           Why Bankrate can offer what your bank won&apos;t
         </h2>
         <p className="mt-8 text-[18px] leading-[1.55] text-gray-900/80">

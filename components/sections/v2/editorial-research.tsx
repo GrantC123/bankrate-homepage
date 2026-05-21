@@ -42,16 +42,16 @@ const SECONDARIES = [
 export function EditorialResearch() {
   return (
     <SectionShell className="py-20">
-      <h2 className="max-w-[860px] font-serif text-[48px] font-semibold leading-[1.15] tracking-[-2px] text-gray-900">
+      <h2 className="max-w-[860px] font-serif text-[length:var(--text-heading-lg)] font-semibold leading-[1.15] tracking-[-2px] text-gray-900">
         What the market looks like when someone&apos;s actually been watching it.
       </h2>
 
       <div className="mt-12 grid gap-6 lg:grid-cols-[1.4fr_1fr]">
-        <article className="flex flex-col gap-8 rounded-3xl bg-blue-900 p-12 text-white">
+        <article className="flex flex-col gap-8 rounded-3xl bg-blue-900 p-6 md:p-12 text-white">
           <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-blue-300">
             {LEAD.tag}
           </p>
-          <h3 className="font-serif text-[40px] font-semibold leading-[1.15] tracking-[-1.5px]">
+          <h3 className="font-serif text-[length:var(--text-heading-md)] font-semibold leading-[1.15] tracking-[-1px] break-words">
             {LEAD.title}
           </h3>
           <p className="text-[18px] leading-[1.5] text-white/80">{LEAD.body}</p>

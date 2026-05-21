@@ -12,7 +12,7 @@ export function HeroV2() {
     <SectionShell className="pt-8 pb-24">
       <div className="grid items-center gap-16 lg:grid-cols-[1fr_1.05fr]">
         <div className="text-white">
-          <h1 className="font-serif text-[64px] font-semibold leading-[1.05] tracking-[-2.5px]">
+          <h1 className="font-serif text-[length:var(--text-display)] font-semibold leading-[1.05] tracking-[-2px]">
             9 out of 10 homebuyers overpay for their mortgage.{" "}
             <span className="text-blue-300">Are you one of them?</span>
           </h1>
@@ -31,7 +31,7 @@ export function HeroV2() {
         </div>
 
         <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-3 backdrop-blur-sm">
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             {RATES.map((rate) => (
               <RateTile key={rate.label} {...rate} />
             ))}

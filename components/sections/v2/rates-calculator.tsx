@@ -44,7 +44,7 @@ export function RatesAndCalculator() {
   return (
     <SectionShell className="py-20">
       <header className="mx-auto max-w-[760px] text-center">
-        <h2 className="font-serif text-[48px] font-semibold leading-[1.15] tracking-[-2px] text-gray-900">
+        <h2 className="font-serif text-[length:var(--text-heading-lg)] font-semibold leading-[1.15] tracking-[-2px] text-gray-900">
           Today&apos;s rates. Not the ones your bank quoted you.
         </h2>
         <p className="mt-6 text-[18px] leading-[1.55] text-gray-900/80">
@@ -144,9 +144,9 @@ function CalculatorTease() {
   }, [loan, loanType, scoreBucket])
 
   return (
-    <div className="mt-12 grid gap-10 rounded-3xl bg-white p-12 md:grid-cols-[1.05fr_1fr]">
+    <div className="mt-12 grid gap-10 rounded-3xl bg-white p-6 md:p-12 md:grid-cols-[1.05fr_1fr]">
       <div>
-        <h3 className="font-serif text-[32px] font-semibold leading-[1.2] tracking-[-1px] text-gray-900">
+        <h3 className="font-serif text-[length:var(--text-heading-md)] font-semibold leading-[1.2] tracking-[-1px] text-gray-900">
           What does your rate actually cost you?
         </h3>
         <p className="mt-4 text-[16px] leading-[1.55] text-gray-900/75">

@@ -33,7 +33,7 @@ const TILES = [
 export function ProductsV2() {
   return (
     <SectionShell className="py-20">
-      <h2 className="max-w-[760px] font-serif text-[48px] font-semibold leading-[1.15] tracking-[-2px] text-gray-900">
+      <h2 className="max-w-[760px] font-serif text-[length:var(--text-heading-lg)] font-semibold leading-[1.15] tracking-[-2px] text-gray-900">
         Build your home on a stronger financial foundation
       </h2>
 

@@ -35,7 +35,7 @@ const PATHS = [
 export function AudiencePathing() {
   return (
     <SectionShell className="py-20">
-      <h2 className="font-serif text-[48px] font-semibold leading-[1.15] tracking-[-2px] text-gray-900">
+      <h2 className="font-serif text-[length:var(--text-heading-lg)] font-semibold leading-[1.15] tracking-[-2px] text-gray-900">
         Where are you right now?
       </h2>
 
@@ -43,7 +43,7 @@ export function AudiencePathing() {
         {PATHS.map((path) => (
           <article
             key={path.id}
-            className="flex flex-col gap-6 rounded-3xl border border-gray-200 bg-white p-10"
+            className="flex flex-col gap-6 rounded-3xl border border-gray-200 bg-white p-6 md:p-10"
           >
             <div className="flex items-baseline gap-4">
               <h3 className="font-serif text-[28px] font-semibold leading-[1.2] tracking-[-1px] text-gray-900">
