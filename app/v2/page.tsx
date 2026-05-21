@@ -9,13 +9,13 @@ import { EditorialResearch } from "@/components/sections/v2/editorial-research"
 import { ExpertTeamV2 } from "@/components/sections/v2/expert-team"
 import { ProductsV2 } from "@/components/sections/v2/products"
 import { B2BEndcap } from "@/components/sections/v2/b2b-endcap"
-import { FooterV2 } from "@/components/sections/v2/footer"
+import { Footer } from "@/components/sections/footer"
 
 export default function HomepageV2() {
   return (
     <>
-      <Nav />
-      <div className="bg-blue-900">
+      <div className="bg-[#f5f2eb]">
+        <Nav variant="cream" />
         <HeroV2 />
       </div>
 
@@ -31,7 +31,7 @@ export default function HomepageV2() {
         <B2BEndcap />
       </main>
 
-      <FooterV2 />
+      <Footer />
     </>
   )
 }

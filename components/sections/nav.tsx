@@ -16,7 +16,10 @@ const NAV_LINKS = [
 const POPULAR_SEARCHES = ["Mortgage rates", "Balance transfer credit cards", "Car insurance quotes"]
 const TOOLS = ["Mortgage calculator", "Loan calculator", "CD calculator"]
 
-export function Nav() {
+type NavVariant = "dark" | "cream"
+
+export function Nav({ variant = "dark" }: { variant?: NavVariant }) {
+  const isCream = variant === "cream"
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const searchInputRef = useRef<HTMLInputElement>(null)
@@ -42,12 +45,17 @@ export function Nav() {
   }, [])
 
   return (
-    <nav className="w-full border-b border-blue-800 bg-blue-900">
+    <nav
+      className={cn(
+        "w-full",
+        isCream ? "bg-[#f5f2eb]" : "border-b border-blue-800 bg-blue-900"
+      )}
+    >
       {/* Desktop */}
-      <div className="mx-auto hidden h-[82px] max-w-[1312px] items-center justify-between px-16 lg:flex">
+      <div className="mx-auto hidden h-[82px] max-w-[1312px] items-center justify-between px-5 md:px-16 lg:flex">
         <a href="/" className="block shrink-0" aria-label="Bankrate home">
           <Image
-            src="/images/logo.svg"
+            src={isCream ? "/images/logo-navy.svg" : "/images/logo.svg"}
             alt="Bankrate"
             width={176}
             height={28}
@@ -61,35 +69,52 @@ export function Nav() {
             <li key={label}>
               <a
                 href="#"
-                className="inline-flex items-center gap-0.5 text-[15px] font-semibold tracking-[-0.15px] text-white"
+                className={cn(
+                  "inline-flex items-center gap-0.5 text-[15px] font-semibold tracking-[-0.15px]",
+                  isCream ? "text-[#13223b]" : "text-white"
+                )}
               >
                 {label}
-                <ChevronIcon />
+                <ChevronIcon className={isCream ? "text-[#13223b]" : "text-primary"} />
               </a>
             </li>
           ))}
         </ul>
 
         <div className="flex items-center gap-2">
-          <Button variant="primary" size="default" className="h-12 px-5">
-            Log in
+          <Button
+            variant="primary"
+            size="default"
+            className="h-12 rounded-[10px] px-5 text-[16px] font-semibold tracking-[-0.16px]"
+          >
+            Log in or sign up
           </Button>
           <button
             type="button"
             onClick={() => setSearchOpen(true)}
-            className="flex h-12 w-12 items-center justify-center rounded-[10px] border border-primary transition-colors hover:bg-primary/10"
+            className={cn(
+              "flex h-12 w-12 items-center justify-center rounded-[10px] border border-primary p-3 transition-colors",
+              isCream ? "hover:bg-primary/10" : "hover:bg-primary/10"
+            )}
             aria-label="Search"
           >
-            <Image src="/images/search.svg" alt="" width={24} height={24} aria-hidden />
+            <Image
+              src="/images/search.svg"
+              alt=""
+              width={24}
+              height={24}
+              className={cn(isCream && "brightness-0")}
+              aria-hidden
+            />
           </button>
         </div>
       </div>
 
-      {/* Mobile — Figma B2B Marketing Page node 146:4066 */}
+      {/* Mobile */}
       <div className="flex h-[72px] items-center justify-between px-5 lg:hidden">
         <a href="/" className="block shrink-0" aria-label="Bankrate home">
           <Image
-            src="/images/logo.svg"
+            src={isCream ? "/images/logo-navy.svg" : "/images/logo.svg"}
             alt="Bankrate"
             width={176}
             height={28}
@@ -105,9 +130,20 @@ export function Nav() {
             className="flex size-10 items-center justify-center"
             aria-label="Search"
           >
-            <Image src="/images/search.svg" alt="" width={20} height={20} aria-hidden />
+            <Image
+              src="/images/search.svg"
+              alt=""
+              width={20}
+              height={20}
+              className={cn(isCream && "brightness-0")}
+              aria-hidden
+            />
           </button>
-          <MobileMenuButton open={menuOpen} onClick={() => setMenuOpen((open) => !open)} />
+          <MobileMenuButton
+            open={menuOpen}
+            light={isCream}
+            onClick={() => setMenuOpen((open) => !open)}
+          />
         </div>
       </div>
 
@@ -115,7 +151,8 @@ export function Nav() {
       <div
         id="mobile-nav-menu"
         className={cn(
-          "border-t border-blue-800 bg-blue-900 lg:hidden",
+          "lg:hidden",
+          isCream ? "border-t border-gray-200 bg-[#f5f2eb]" : "border-t border-blue-800 bg-blue-900",
           menuOpen ? "block" : "hidden"
         )}
         role="dialog"
@@ -124,14 +161,23 @@ export function Nav() {
       >
         <ul className="flex flex-col px-5 py-6" role="list">
           {NAV_LINKS.map((label) => (
-            <li key={label} className="border-b border-blue-800 last:border-b-0">
+            <li
+              key={label}
+              className={cn(
+                "border-b last:border-b-0",
+                isCream ? "border-gray-200" : "border-blue-800"
+              )}
+            >
               <a
                 href="#"
-                className="flex items-center justify-between py-4 text-[15px] font-semibold tracking-[-0.15px] text-white"
+                className={cn(
+                  "flex items-center justify-between py-4 text-[15px] font-semibold tracking-[-0.15px]",
+                  isCream ? "text-[#13223b]" : "text-white"
+                )}
                 onClick={() => setMenuOpen(false)}
               >
                 {label}
-                <ChevronIcon />
+                <ChevronIcon className={isCream ? "text-[#13223b]" : "text-primary"} />
               </a>
             </li>
           ))}
@@ -140,10 +186,10 @@ export function Nav() {
           <Button
             variant="primary"
             size="default"
-            className="h-12 w-full"
+            className="h-12 w-full rounded-[10px]"
             onClick={() => setMenuOpen(false)}
           >
-            Log in
+            Log in or sign up
           </Button>
         </div>
       </div>
@@ -218,7 +264,16 @@ export function Nav() {
   )
 }
 
-function MobileMenuButton({ open, onClick }: { open: boolean; onClick: () => void }) {
+function MobileMenuButton({
+  open,
+  light,
+  onClick,
+}: {
+  open: boolean
+  light?: boolean
+  onClick: () => void
+}) {
+  const barColor = light ? "bg-[#13223b]" : "bg-white"
   return (
     <button
       type="button"
@@ -231,13 +286,15 @@ function MobileMenuButton({ open, onClick }: { open: boolean; onClick: () => voi
       <span className="flex w-5 flex-col gap-1">
         <span
           className={cn(
-            "h-0.5 w-5 bg-white transition-transform duration-200",
+            "h-0.5 w-5 transition-transform duration-200",
+            barColor,
             open && "translate-y-[6px] rotate-45"
           )}
         />
         <span
           className={cn(
-            "h-0.5 w-5 bg-white transition-transform duration-200",
+            "h-0.5 w-5 transition-transform duration-200",
+            barColor,
             open && "-translate-y-[6px] -rotate-45"
           )}
         />
@@ -246,9 +303,9 @@ function MobileMenuButton({ open, onClick }: { open: boolean; onClick: () => voi
   )
 }
 
-function ChevronIcon() {
+function ChevronIcon({ className }: { className?: string }) {
   return (
-    <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden className="text-primary">
+    <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden className={cn("text-primary", className)}>
       <path d="M1.5 2.5L4 5L6.5 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   )

@@ -66,7 +66,7 @@ const SOCIAL_LINKS = [
 export function Footer() {
   return (
     <footer className="bg-blue-900 text-white">
-      <div className="mx-auto max-w-[1280px] px-5 py-12 md:px-16 md:py-16">
+      <div className="@container mx-auto max-w-[1280px] px-5 py-12 md:px-16 md:py-16">
         <a href="/" className="mb-10 inline-block shrink-0" aria-label="Bankrate home">
           <Image
             src="/images/logo.svg"
@@ -78,15 +78,19 @@ export function Footer() {
         </a>
 
         <div className="border-t border-white/10 pt-10">
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12 @min-[1200px]:grid-cols-[repeat(3,minmax(0,1fr))_minmax(520px,520px)] lg:gap-16">
             {FOOTER_LINK_SECTIONS.map((section) => (
-              <FooterLinkColumn key={section.title} title={section.title} links={section.links} />
+              <FooterLinkColumn
+                key={section.title}
+                title={section.title}
+                links={section.links}
+                className="min-w-0"
+              />
             ))}
-          </div>
-
-          <div className="mt-10 md:mt-12">
-            <h3 className="mb-4 text-sm font-semibold text-white">How we make money</h3>
-            <p className="max-w-none text-sm leading-[1.5] text-white/55">{HOW_WE_MAKE_MONEY}</p>
+            <div className="min-w-0 md:col-span-3 @min-[1200px]:col-span-1 @min-[1200px]:min-w-[520px]">
+              <h3 className="mb-4 text-sm font-semibold text-white">How we make money</h3>
+              <p className="text-sm leading-[1.5] text-white/55">{HOW_WE_MAKE_MONEY}</p>
+            </div>
           </div>
         </div>
 
@@ -143,12 +147,14 @@ export function Footer() {
 function FooterLinkColumn({
   title,
   links,
+  className,
 }: {
   title: string
   links: ReadonlyArray<{ label: string; href: string }>
+  className?: string
 }) {
   return (
-    <div>
+    <div className={className}>
       <h3 className="mb-4 text-sm font-semibold text-white">{title}</h3>
       <ul className="space-y-3">
         {links.map((link) => (
