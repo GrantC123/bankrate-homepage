@@ -36,12 +36,12 @@ export function MemberExperience() {
           {FEATURES.map((feature) => (
             <div
               key={feature.title}
-              className="rounded-2xl border border-white/10 bg-white/[0.04] p-8"
+              className="rounded-2xl border border-white/10 bg-white p-8"
             >
-              <p className="font-serif text-[22px] font-semibold tracking-[-0.5px] text-white">
+              <p className="font-serif text-[22px] font-semibold leading-[1.5] tracking-[-0.5px] text-blue-900">
                 {feature.title}
               </p>
-              <p className="mt-3 text-[15px] leading-[1.5] text-white/70">{feature.body}</p>
+              <p className="mt-3 text-[15px] leading-[1.5] text-gray-700">{feature.body}</p>
             </div>
           ))}
         </div>
