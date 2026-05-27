@@ -319,11 +319,7 @@ export function Nav({ variant = "dark" }: { variant?: NavVariant }) {
         </div>
 
         <div className="flex shrink-0 items-center gap-6">
-          <Button
-            variant="primary"
-            size="default"
-            className="rounded px-4 py-3 text-sm font-bold tracking-[-0.25px]"
-          >
+          <Button variant="primary" size="default" className="h-12 px-6 text-[15px]">
             Log in or sign up
           </Button>
           <button
@@ -486,7 +482,7 @@ export function Nav({ variant = "dark" }: { variant?: NavVariant }) {
       {/* Search overlay */}
       {searchOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-start justify-center bg-blue-900/40 pt-[72px] px-4"
+          className="fixed inset-0 z-50 flex items-start justify-center bg-blue-900/40k pt-[72px] px-4"
           onClick={() => setSearchOpen(false)}
         >
           <div
